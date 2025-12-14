@@ -39,12 +39,11 @@ TraversalNavData.ToggleDebug
 
 ## 3. Traversal NavData Settings
 
-Traversal navigation generation and debug behavior can be configured via plugin settings.
+Traversal navigation generation and debug settings can be configured via plugin settings.
 
 ![Traversal Navigation Menu](Doc/TraversalNavigationMenu.png)
 ![Traversal NavData Settings](Doc/TraversalNavDataSettings.png)
 
-These settings control how traversal segments are generated, validated, and visualized during debugging.
 
 ---
 
@@ -85,7 +84,7 @@ Custom validators can override the following functions:
 * **PostProcess Traversal Segment**
   Called after a traversal segment is generated, allowing modification of the final segment data (for example, assigning a segment tag or adjusting the segment position).
 
-  ![Post Process Traversal Segment](Doc/PostProcessDoc/TraversalNavSegment.png)
+  ![Post Process Traversal Segment](Doc/PostProcessTraversalNavSegment.png)
 
 ### Execution Rules
 
@@ -120,7 +119,7 @@ The **Traversal NavData Subsystem** provides runtime access to traversal navigat
 
 ## 6. Traversal Nav Segment Data
 
-Each traversal segment contains structured data describing its position, orientation, and classification.
+
 
 ![Traversal Segment](Doc/TraversalNavSegment.png)
 ![Traversal Segment Struct](Doc/TraversalSegmentStruct.png)
@@ -132,32 +131,13 @@ Each traversal segment contains structured data describing its position, orienta
 
 ### Utility Functions
 
-The following helper functions are available for working with traversal segments:
 
-* **Find Closest Point On Traversal Segment**
-  ![Find Closest Point](Doc/FindClosestPointOnTraversalSegment.png)
+![Find Closest Point](Doc/FindClosestPointOnTraversalSegment.png)
+![Get Segment Length](Doc/GetTraversalSegmentLength.png)
+![Get Segment Mid Point](Doc/GetTraversalSegmentMidPoint.png)
+![Get Segment Direction](Doc/GetTraversalSegmentDirection.png)
+![Get Segment Normal](Doc/GetTraversalSegmentNormal.png)
 
-* **Get Traversal Segment Length**
-  ![Get Segment Length](Doc/GetTraversalSegmentLength.png)
-
-* **Get Traversal Segment Mid Point**
-  ![Get Segment Mid Point](Doc/GetTraversalSegmentMidPoint.png)
-
-* **Get Traversal Segment Direction**
-  ![Get Segment Direction](Doc/GetTraversalSegmentDirection.png)
-
-* **Get Traversal Segment Normal**
-  ![Get Segment Normal](Doc/GetTraversalSegmentNormal.png)
-
-### Segment Orientation
-
-Each traversal segment exposes:
-
-* **Direction**
-* **Normal**
-* **Binormal**
-
-These vectors can be used to align character movement and animations to the traversal surface.
 
 ---
 
@@ -181,7 +161,5 @@ This setup enables the sample character to utilize traversal navigation segment 
 ---
 
 ## 8. Debug Nodes
-
-The plugin includes debug nodes to help visualize and inspect traversal navigation data during development.
 
 ![Debug Nodes](Doc/Debug.png)
