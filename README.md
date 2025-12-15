@@ -2,7 +2,8 @@
 
 ![Traversal Navigation Data Plugin](Doc/TraversalNavigationDataPlugin.png)
 
-This plugin provides a system for baking, querying, and using traversal navigation segment data generated from the NavMesh. It is designed to support traversal gameplay features such as ledge grabs, vaults, and other navigation-based traversal actions.
+---
+* This plugin provides a solution for baking, querying, and using traversal navigation segment data generated from the NavMesh. It is designed to support traversal gameplay features such as ledge grabs, vaults, and other navigation-based traversal actions.
 These segments can be queried at runtime and integrated directly into character traversal logic.
 ---
 
